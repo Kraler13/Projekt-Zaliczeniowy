@@ -22,6 +22,14 @@ namespace WpfApp1
         public AdminWindow()
         {
             InitializeComponent();
+
+            Baza db = new Baza();
+            LakieryGrid.ItemsSource = db.Lakiers.ToList();
+        }
+
+        private void dodajLakierBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

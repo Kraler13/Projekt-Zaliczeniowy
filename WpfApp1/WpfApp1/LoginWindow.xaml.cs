@@ -23,5 +23,18 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(loginTxt.Text == "admin" && hasloTxt.Text == "admin123")
+            {
+                AdminWindow aw = new AdminWindow();
+                aw.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Podany złe dane");
+            }
+        }
     }
 }
