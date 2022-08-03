@@ -19,16 +19,18 @@ namespace WpfApp1
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+        public MainWindow mw;
+        public LoginWindow(MainWindow mw)
         {
             InitializeComponent();
+            this.mw = mw;
         }
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
             if(loginTxt.Text == "admin" && hasloTxt.Text == "admin123")
             {
-                AdminWindow aw = new AdminWindow();
+                AdminWindow aw = new AdminWindow(mw);
                 aw.ShowDialog();
             }
             else

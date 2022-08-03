@@ -19,17 +19,73 @@ namespace WpfApp1
     /// </summary>
     public partial class AdminWindow : Window
     {
-        public AdminWindow()
+        public MainWindow mw;
+        public AdminWindow(MainWindow mw)
         {
             InitializeComponent();
 
-            Baza db = new Baza();
-            LakieryGrid.ItemsSource = db.Lakiers.ToList();
+            this.mw = mw;
+
+            Reload();
+        }
+
+        public void Reload()
+        {
+            LakieryGrid.ItemsSource = null;
+            LakieryGrid.ItemsSource = mw.db.Lakiers.ToList();
+            SilnikGrid.ItemsSource = null;
+            SilnikGrid.ItemsSource = mw.db.Lakiers.ToList();
         }
 
         private void dodajLakierBtn_Click(object sender, RoutedEventArgs e)
         {
+            DodajLakierWindow dw = new DodajLakierWindow(mw, this);
+            dw.ShowDialog();
+        }
 
+        private void usunBatton_Click(object sender, RoutedEventArgs e)
+        {
+            if (LakieryGrid.SelectedItem != null && LakieryGrid.SelectedItem is Lakier)
+            {
+                Lakier r = (Lakier)LakieryGrid.SelectedItem;
+                Lakier lakier = mw.db.Lakiers.Find(r.Id);
+                mw.db.Lakiers.Remove(lakier);
+                mw.db.SaveChanges();
+
+                Reload();
+            }
+            else
+            {
+                MessageBox.Show("Wybierz lakier");
+            }
+        }
+
+        private void LakieryGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void usunSilnikBatton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SilnikGrid.SelectedItem != null && SilnikGrid.SelectedItem is Lakier)
+            {
+                Silnik r = (Silnik)LakieryGrid.SelectedItem;
+                Silnik silnik = mw.db.Silniks.Find(r.Id);
+                mw.db.Silniks.Remove(silnik);
+                mw.db.SaveChanges();
+
+                Reload();
+            }
+            else
+            {
+                MessageBox.Show("Wybierz lakier");
+            }
+        }
+
+        private void dodajSilnikBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DodajSilnikWindow dw = new DodajSilnikWindow(mw, this);
+            dw.ShowDialog();
         }
     }
 }

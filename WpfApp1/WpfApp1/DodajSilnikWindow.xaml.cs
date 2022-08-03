@@ -10,28 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy DodajSilnikWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DodajSilnikWindow : Window
     {
-        public Baza db;
-        public MainWindow()
+        public DodajSilnikWindow()
         {
             InitializeComponent();
 
-            db = new Baza();
+            paliwo1.ItemsSource = new string[] { "Benzyna", "Elektryczny", "Diesel", "LPG" };
         }
 
-        private void adminBtn_Click(object sender, RoutedEventArgs e)
+        private void zapiszButton_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow lw = new LoginWindow(this);
-            lw.ShowDialog();
+
         }
     }
 }
