@@ -28,7 +28,8 @@ namespace WpfApp1
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            if(loginTxt.Text == "admin" && hasloTxt.Text == "admin123")
+            Uzytkownik admin = mw.db.Uzytkowniks.FirstOrDefault(f => f.Login == loginTxt.Text && f.Haslo ==hasloTxt.Text);
+            if(admin != null)
             {
                 AdminWindow aw = new AdminWindow(mw);
                 aw.ShowDialog();

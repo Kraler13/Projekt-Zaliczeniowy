@@ -13,13 +13,13 @@ namespace WpfApp1
         public string Marka { get; set; }
         public string Kategori { get; set; }
         public decimal Cena { get; set; }
-        public int SilnikId { get; set; }
-        public int LakierId { get; set; }
+        public int? SilnikId { get; set; }
+        public int? LakierId { get; set; }
 
         public Silnik Silnik { get; set; }
         public Lakier Lakier { get; set; }
 
-        public Samochod(string model, string marka, string kategori, decimal cena, int silnikId, int lakierId)
+        public Samochod(string model, string marka, string kategori, decimal cena, int? silnikId, int? lakierId)
         {
             Model = model;
             Marka = marka;

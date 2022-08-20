@@ -8,6 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="adminBtn" Content="Admin" HorizontalAlignment="Left" Margin="717,393,0,0" VerticalAlignment="Top" Click="adminBtn_Click"/>
+        <Label x:Name="Samochod" Content="Samochod" HorizontalAlignment="Left" Margin="32,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Silnik" Content="Silnik" HorizontalAlignment="Left" Margin="45,85,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Lakier" Content="Lakier" HorizontalAlignment="Left" Margin="45,154,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="samochodCMB" HorizontalAlignment="Left" Margin="65,56,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="samochodCMB_SelectionChanged"/>
+        <ComboBox x:Name="silnikCMB" HorizontalAlignment="Left" Margin="65,132,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="silnikCMB_SelectionChanged"/>
+        <ComboBox x:Name="lakierCMB" HorizontalAlignment="Left" Margin="66,201,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="lakierCMB_SelectionChanged"/>
+        <Label x:Name="cenaLonczna" Content="Cena Łonczna" HorizontalAlignment="Left" Margin="67,257,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

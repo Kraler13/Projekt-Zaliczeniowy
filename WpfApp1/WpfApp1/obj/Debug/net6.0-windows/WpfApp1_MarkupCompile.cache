@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\App.xaml
-3-1107111578
+6-524251254
 
-10-1818237736
+131858850788
 214-163210288
-AdminWindow.xaml;LoginWindow.xaml;MainWindow.xaml;
+AdminWindow.xaml;DodajLakierWindow.xaml;DodajSamochodWindow.xaml;DodajSilnikWindow.xaml;LoginWindow.xaml;MainWindow.xaml;
 
 False
 

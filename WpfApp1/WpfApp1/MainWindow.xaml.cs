@@ -26,12 +26,60 @@ namespace WpfApp1
             InitializeComponent();
 
             db = new Baza();
+
+            samochodCMB.ItemsSource = db.Samochods.ToList();
+            samochodCMB.SelectedIndex = 0;
+            silnikCMB.ItemsSource = db.Silniks.ToList();
+            silnikCMB.SelectedIndex = 0;
+            lakierCMB.ItemsSource = db.Lakiers.ToList();
+            lakierCMB.SelectedIndex = 0;
         }
 
         private void adminBtn_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow lw = new LoginWindow(this);
             lw.ShowDialog();
+        }
+
+        private void calculate()
+        {
+            decimal cena = 0;
+
+            if (samochodCMB.SelectedItem != null)
+            {
+                Samochod samochod = (Samochod)samochodCMB.SelectedItem;
+
+                cena += samochod.Cena;
+            }
+
+            if (silnikCMB.SelectedItem != null)
+            {
+                Silnik silnik = (Silnik)silnikCMB.SelectedItem;
+
+                cena += silnik.Cena;
+            }
+            if (lakierCMB.SelectedItem != null)
+            {
+                Lakier lakier = (Lakier)lakierCMB.SelectedItem;
+
+                cena += lakier.Cena;
+            }
+            cenaLonczna.Content = "Cena łączna" + cena + "zł";
+        }
+
+        private void samochodCMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            calculate();
+        }
+
+        private void silnikCMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            calculate();
+        }
+
+        private void lakierCMB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            calculate();
         }
     }
 }

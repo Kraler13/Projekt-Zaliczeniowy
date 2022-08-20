@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800">
+        Title="AdminWindow" Height="603" Width="800">
     <Grid>
-        <DataGrid x:Name="LakieryGrid" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="LakieryGrid_SelectionChanged" Margin="0,10,471,217"/>
+        <DataGrid x:Name="LakieryGrid" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="LakieryGrid_SelectionChanged" Margin="0,10,471,355"/>
         <Button x:Name="dodajLakierBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="273,237,0,0" VerticalAlignment="Top" Click="dodajLakierBtn_Click"/>
         <Button x:Name="usunLakierBatton" Content="Usuń" HorizontalAlignment="Left" Margin="200,237,0,0" VerticalAlignment="Top" Click="usunBatton_Click"/>
-        <DataGrid x:Name="SilnikGrid" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="LakieryGrid_SelectionChanged" Margin="353,10,118,217"/>
+        <DataGrid x:Name="SilnikGrid" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="LakieryGrid_SelectionChanged" Margin="353,10,118,355"/>
         <Button x:Name="dodajSilnikBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="626,237,0,0" VerticalAlignment="Top" Click="dodajSilnikBtn_Click"/>
         <Button x:Name="usunSilnikBatton" Content="Usuń" HorizontalAlignment="Left" Margin="553,237,0,0" VerticalAlignment="Top" Click="usunSilnikBatton_Click"/>
+        <DataGrid x:Name="SamochodyGrid" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="LakieryGrid_SelectionChanged" Margin="15,278,118,87"/>
+        <Button x:Name="dodajSamochodBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="568,505,0,0" VerticalAlignment="Top" Width="72" Click="dodajSamochodBtn_Click"/>
+        <Button x:Name="usunSamochodBatton" Content="Usuń" HorizontalAlignment="Left" Margin="471,505,0,0" VerticalAlignment="Top" Width="63" Click="usunSamochodBatton_Click"/>
 
     </Grid>
 </Window>

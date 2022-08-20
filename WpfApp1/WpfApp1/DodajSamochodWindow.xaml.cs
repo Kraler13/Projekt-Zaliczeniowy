@@ -15,32 +15,32 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Logika interakcji dla klasy DodajSilnikWindow.xaml
+    /// Logika interakcji dla klasy DodajSamochodWindow.xaml
     /// </summary>
-    public partial class DodajSilnikWindow : Window
+    public partial class DodajSamochodWindow : Window
     {
         public MainWindow mw;
         public AdminWindow aw;
-        public DodajSilnikWindow(MainWindow mw, AdminWindow aw)
+        public DodajSamochodWindow(MainWindow mw, AdminWindow aw)
         {
             InitializeComponent();
 
             this.mw = mw;
             this.aw = aw;
 
-            paliwo1.ItemsSource = new string[] { "Benzyna", "Elektryczny", "Diesel", "LPG" };
+            kategoria1.ItemsSource = new string[] { "Miejski", "Crossover", "SUV", "Limuzyna" };
         }
 
         private void zapiszButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(nazwaTxt.Text) || int.TryParse(pojemnoscTxt.Text, out int pojemnosc) || !decimal.TryParse(cenaTxt.Text, out decimal cena))
+            if (string.IsNullOrEmpty(markaTxt.Text) || string.IsNullOrEmpty(modelTxt.Text) || !decimal.TryParse(cenaTxt.Text, out decimal cena))
             {
                 MessageBox.Show("Wprowadzono złe dane");
             }
             else
             {
-                Silnik silnik = new Silnik(nazwaTxt.Text, pojemnosc, paliwo1.SelectedItem.ToString(), cena);
-                mw.db.Silniks.Add(silnik);
+                Samochod samochod = new Samochod(markaTxt.Text, modelTxt.Text, kategoria1.SelectedItem.ToString(), cena, null, null);
+                mw.db.Samochods.Add(samochod);
                 mw.db.SaveChanges();
 
                 aw.Reload();

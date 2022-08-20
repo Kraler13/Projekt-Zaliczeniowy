@@ -55,3 +55,9 @@ C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\De
 C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.pdb
 C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.genruntimeconfig.cache
 C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\ref\WpfApp1.dll
+C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\DodajLakierWindow.g.cs
+C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\DodajSilnikWindow.g.cs
+C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\DodajLakierWindow.baml
+C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\DodajSilnikWindow.baml
+C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\DodajSamochodWindow.g.cs
+C:\nacodzien\Filip\Obiektowe\Projekt\Projekt-Zaliczeniowy\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\DodajSamochodWindow.baml

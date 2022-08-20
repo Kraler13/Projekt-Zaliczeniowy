@@ -35,6 +35,8 @@ namespace WpfApp1
             LakieryGrid.ItemsSource = mw.db.Lakiers.ToList();
             SilnikGrid.ItemsSource = null;
             SilnikGrid.ItemsSource = mw.db.Lakiers.ToList();
+            SamochodyGrid.ItemsSource = null;
+            SamochodyGrid.ItemsSource = mw.db.Lakiers.ToList();
         }
 
         private void dodajLakierBtn_Click(object sender, RoutedEventArgs e)
@@ -67,7 +69,7 @@ namespace WpfApp1
 
         private void usunSilnikBatton_Click(object sender, RoutedEventArgs e)
         {
-            if (SilnikGrid.SelectedItem != null && SilnikGrid.SelectedItem is Lakier)
+            if (SilnikGrid.SelectedItem != null && SilnikGrid.SelectedItem is Silnik)
             {
                 Silnik r = (Silnik)LakieryGrid.SelectedItem;
                 Silnik silnik = mw.db.Silniks.Find(r.Id);
@@ -78,13 +80,36 @@ namespace WpfApp1
             }
             else
             {
-                MessageBox.Show("Wybierz lakier");
+                MessageBox.Show("Wybierz silnik");
             }
         }
 
         private void dodajSilnikBtn_Click(object sender, RoutedEventArgs e)
         {
             DodajSilnikWindow dw = new DodajSilnikWindow(mw, this);
+            dw.ShowDialog();
+        }
+
+        private void usunSamochodBatton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SamochodyGrid.SelectedItem != null && SamochodyGrid.SelectedItem is Samochod)
+            {
+                Samochod r = (Samochod)SamochodyGrid.SelectedItem;
+                Samochod samochod = mw.db.Samochods.Find(r.Id);
+                mw.db.Samochods.Remove(samochod);
+                mw.db.SaveChanges();
+
+                Reload();
+            }
+            else
+            {
+                MessageBox.Show("Wybierz silnik");
+            }
+        }
+
+        private void dodajSamochodBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DodajSamochodWindow dw = new DodajSamochodWindow(mw, this);
             dw.ShowDialog();
         }
     }
