@@ -33,7 +33,7 @@ namespace WpfApp1
 
         private void zapiszButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(nazwaTxt.Text) || int.TryParse(pojemnoscTxt.Text, out int pojemnosc) || !decimal.TryParse(cenaTxt.Text, out decimal cena))
+            if (string.IsNullOrEmpty(nazwaTxt.Text) || !int.TryParse(pojemnoscTxt.Text, out int pojemnosc) || !decimal.TryParse(cenaTxt.Text, out decimal cena))
             {
                 MessageBox.Show("Wprowadzono złe dane");
             }

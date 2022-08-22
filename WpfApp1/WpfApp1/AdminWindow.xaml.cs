@@ -29,14 +29,17 @@ namespace WpfApp1
             Reload();
         }
 
+        /// <summary>
+        /// Ta funkcja odświerza wszystkie tabele
+        /// </summary>
         public void Reload()
         {
             LakieryGrid.ItemsSource = null;
             LakieryGrid.ItemsSource = mw.db.Lakiers.ToList();
             SilnikGrid.ItemsSource = null;
-            SilnikGrid.ItemsSource = mw.db.Lakiers.ToList();
+            SilnikGrid.ItemsSource = mw.db.Silniks.ToList();
             SamochodyGrid.ItemsSource = null;
-            SamochodyGrid.ItemsSource = mw.db.Lakiers.ToList();
+            SamochodyGrid.ItemsSource = mw.db.Samochods.ToList();
         }
 
         private void dodajLakierBtn_Click(object sender, RoutedEventArgs e)
@@ -71,7 +74,7 @@ namespace WpfApp1
         {
             if (SilnikGrid.SelectedItem != null && SilnikGrid.SelectedItem is Silnik)
             {
-                Silnik r = (Silnik)LakieryGrid.SelectedItem;
+                Silnik r = (Silnik)SilnikGrid.SelectedItem;
                 Silnik silnik = mw.db.Silniks.Find(r.Id);
                 mw.db.Silniks.Remove(silnik);
                 mw.db.SaveChanges();
